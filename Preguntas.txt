@@ -1,0 +1,5 @@
+1.¿Para qué sirve canvas en JavaScript?
+R/ Se usa para dibujar gráficos usando scripts, composiciones fotográficas o animaciones. 
+
+2. ¿Para qué sirve self en JavaScript?
+R/ Self se usa para guardar siempre la referencia original al objeto que disparó el método (también se puede usar _this)
