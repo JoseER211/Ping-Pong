@@ -3,3 +3,12 @@ R/ Se usa para dibujar gráficos usando scripts, composiciones fotográficas o a
 
 2. ¿Para qué sirve self en JavaScript?
 R/ Self se usa para guardar siempre la referencia original al objeto que disparó el método (también se puede usar _this)
+
+3. ¿Qué hacen las funciones draw y setup en JavaScript?
+R/ El código que se pone en la función setup, se ejecuta una sola vez, mientras que el que se pone en la función draw, se ejecuta continuamente (60 veces por segundo modificables)
+
+4. ¿Qué hace el método fillRect?
+R/ Dibuja un rectángulo lleno
+
+5. ¿Para qué se usa hasOwnProperty?
+R/ Indica si el objeto que está llamando tiene una propiedad con el nombre del argumento. 
