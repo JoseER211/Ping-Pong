@@ -1,5 +1,6 @@
 (function(){
   self.Board = function(width, height){
+  	//Caractetísticas generales del campo de juego
  	this.width = width;
  	this.height = height;
  	this.plating = false;
@@ -10,6 +11,7 @@
  }
 
  	self.Board.prototype = {
+ 		//El campo de juego obtiene los elementos
  	get elements(){
  		var elements = this.bars.map(function(bar){return bar;});
  		elements.push(this.ball);
@@ -21,6 +23,7 @@
 })();
 (function(){
 	self.Ball = function(x, y, radius, board){
+		//Característiacas de la pelota
 		this.x = x;
 		this.y = y;
 		this.radius = radius;
@@ -37,6 +40,7 @@
 
 	}
 	self.Ball.prototype = {
+		//Permite que la pelota se mueva de lado a lado simulando la realidad con el rebote
 			move: function(){
 				this.x += (this.speedX * this.direction);
 				this.y += (this.speedY * this.direction);
@@ -67,6 +71,7 @@
 
 (function(){
 	self.Bar = function(x, y, width, height, board){
+		//Características de las barras
 		this.x = x;
 		this.y = y;
 		this.width = width;
@@ -80,6 +85,7 @@
 	}
 
 	self.Bar.prototype = {
+		//Permite que las barras subas y bajen
 		down: function(){
 			this.y += this.speed;
 		},
@@ -94,6 +100,7 @@
 })();
 
 (function(){
+	//permite la visualización del juego
 	self.BoardView = function(canvas, board){
 		this.canvas = canvas;
 		this.canvas.width = board.width;
@@ -103,9 +110,11 @@
 	}
 
 	self.BoardView.prototype = {
+		//Propiedad clean para limpiar el dibujado y simular la animación
 		clean: function(){
 			this.ctx.clearRect(0, 0, this.board.width, this.board.height);
 		}, 
+		//Propiedad draw para dibujar los elementos 
 		draw: function(){
 			for (var i = this.board.elements.length - 1; i >= 0; i--) {
 				var el = this.board.elements[i];
@@ -114,6 +123,7 @@
 			};
 		},
 		checkCollision: function(){
+			// Verifica la colision
 			for (var i = this.board.bars.length - 1; i >= 0; i--) {
 				var bar = this.board.bars[i];
 				if (hit(bar, this.board.ball)) {
@@ -123,6 +133,7 @@
 		},
 
 		play: function(){
+			//Inicia el juego
 			if (this.board.playing) {
 			this.clean();
 			this.draw();
@@ -134,7 +145,7 @@
 	}
 
 	function hit(a, b){
-		//Revisa si a colisiona con b
+		//Revisa si la pelota colisiona con alguna de las barras 
 		var hit = false;
 
 		if (b.x + b.width >= a.x && b.x < a.x + a.width) {
@@ -154,7 +165,7 @@
 	}
 
 	function draw(ctx, element){
-		
+			// Dibuja las barras y la pelota
 			switch(element.kind){
 			case "rectangle":
 			ctx.fillRect(element.x, element.y, element.width, element.height);
@@ -165,12 +176,14 @@
 			ctx.fill();
 			ctx.closePath();
 			break;
+
 		}
 		
 	}
 
 })();
 
+//Características de la pelota y las barras
 var board = new Board(800, 400);
 var bar = new Bar(20, 100, 40, 100, board);
 var bar2 = new Bar(735, 100, 40, 100, board);
@@ -180,7 +193,7 @@ var ball = new Ball(350, 100, 10, board);
 
 
 document.addEventListener("keydown", function(ev){
-	
+	// Comandos de teclado para manipular el juego
 	if (ev.keyCode == 87) {
 		ev.preventDefault();
 		bar.up();
