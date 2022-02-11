@@ -7,8 +7,14 @@ R/ Self se usa para guardar siempre la referencia original al objeto que dispar�
 3. ¿Qué hacen las funciones draw y setup en JavaScript?
 R/ El código que se pone en la función setup, se ejecuta una sola vez, mientras que el que se pone en la función draw, se ejecuta continuamente (60 veces por segundo modificables)
 
-4. ¿Qué hace el método fillRect?
-R/ Dibuja un rectángulo lleno
+4. ¿Qué hace el método fillRect y arc?
+R/ fillRect dibuja un rectángulo lleno y arc un círculo lleno
 
 5. ¿Para qué se usa hasOwnProperty?
 R/ Indica si el objeto que está llamando tiene una propiedad con el nombre del argumento. 
+
+6. ¿Para qué se usa el comando keyCode?
+R/ se usa para trabajar una función que reponde a una tecla para realizar una acción. Cada tecla tiene su propio código.
+
+7. ¿Para qué sirve el método beginPath y closePath?
+R/ beginPath sirve para iniciar una ruta y closePath para terminarla.
