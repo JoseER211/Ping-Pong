@@ -1,16 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title></title>
-	<meta charset="utf-8">
-	<style>
-		canvas{ border: solid; }
-	</style>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Pong</title>
 </head>
 <body>
-	<h1>Ping Pong</h1>
-	<canvas id = "canvas"></canvas>
+
+	<style>
+		body{
+			background-color: #cce6ee;
+		}
+	</style>
+
+	<h3>Ping Pong</h3>
+	<canvas id = "pongGame" style="background-color: #001933 ;"></canvas>
 	<script src="main.js"></script>
 
+	<div>
+		<table border="1px">
+			<tr>
+				<td>
+					<h4>Jugador 1</h4>
+					<p>w, s para mover</p>
+				</td>
+				<td>
+					<h4>Jugador 2</h4>
+					<p>arriba, abajo para mover</p>
+				</td>
+				<td>
+					<h4>Intrucciones</h4>
+					<p>P: pausar</p>
+					<p>C: continuar</p>
+					<p>R: reiniciar</p>
+				</td>
+			</tr>
+		</table>
+	</div>
+	
 </body>
 </html>
